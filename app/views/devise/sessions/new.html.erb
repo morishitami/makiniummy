@@ -6,17 +6,17 @@
 
         <div class="field">
           <%= f.label :code, "会員番号" %><br />
-          <%= f.text_field :code, class: :form__text, id:"code" %>
+          <%= f.text_field :code, class: :form__code, id:"code", maxlength:"4", placeholder:"半角数字", autofocus: true %>
         </div>
         
         <div class="field">
           <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, id:"user_email", autocomplete: "email" %>
         </div>
 
         <div class="field">
-          <%= f.label :password, "パスワード（英数字6文字以上）" %><br />
-          <%= f.password_field :password, id:"user_password", autocomplete: "current-password" %>
+          <%= f.label :password, "パスワード" %><br />
+          <%= f.password_field :password, id:"user_password", autocomplete: "current-password", placeholder:"6文字以上の半角英数字" %>
         </div>
 
         <div class="actions">
