@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true
-  validates :code, format: {with: /\A\d{3}$|^\d{4}\z/, message: 'Please confirm "会員番号"'}
+  validates :code, format: {with: /\A\d{3}$|^\d{4}\z/, message: "(会員番号) can't be blank"}
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: ' Include both letters and numbers'}
         
 end
