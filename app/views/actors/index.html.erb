@@ -3,7 +3,7 @@
     <% if user_signed_in? %>
       <div class="greeting">
         お疲れさまです、
-        <%= link_to "#{current_user.name}さん", root_path, class: :greeting__link%>
+        <%= link_to "#{current_user.stage_name}さん", root_path, class: :greeting__link%>
       </div>
       <div>
         会員番号 <%= current_user.code %>
