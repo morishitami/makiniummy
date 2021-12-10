@@ -1,5 +1,5 @@
 <main class="main">
-  <div class="inner">
+  <div class="statistics">
     <div>
       会員番号 <%= @code %>
       <%= @name %>さんの成績
@@ -10,8 +10,13 @@
         <%= "#{@sheet.cell(1,'U')}ランク #{@sheet.cell(1,'V')} #{@sheet.cell(1,'W')}位/#{@sheet.cell(1,'X')}人中" %>
       </p>
       <p>
-        あと zzzポイントで次のランクに上がります！
+        <%= "現在のMP：#{@sheet.cell(2,'X')}" %>
+      </p>
+      <p>
+        <%= "MP#{@sheet.cell(2,'W')}になると次のランクに上がります！" %>
       </p>
     </div>
+  </div>
+  <div class="detail">
   </div>
 </main>
