@@ -18,33 +18,55 @@
     </div>
   </div>
   <div class="detail">
-    <%= @sheet.each do |row| %>
-      <table border="1">
+    <table border="1">
+      <% 4.times do |num|%>
         <tr>
-          <td width="65"><%= row[2] %></td>
-          <td width="65"><%= row[4] %></td>
-          <td width="65"><%= row[5] %></td>
-          <td width="65"><%= row[6] %></td>
-          <td width="65"><%= row[7] %></td>
-          <td width="65"><%= row[8] %></td>
-          <td width="65"><%= row[9] %></td>
-          <td width="65"><%= row[10] %></td>
-          <td width="65"><%= row[11] %></td>
-          <td width="65"><%= row[12] %></td>
-          <td width="65"><%= row[13] %></td>
-          <td width="65"><%= row[14] %></td>
-          <td width="65"><%= row[15] %></td>
-          <td width="65"><%= row[16] %></td>
-          <td width="65"><%= row[17] %></td>
-          <td width="65"><%= row[18] %></td>
-          <td width="65"><%= row[19] %></td>
-          <td width="65"><%= row[20] %></td>
-          <td width="65"><%= row[21] %></td>
-          <td width="65"><%= row[22] %></td>
-          <td width="65"><%= row[23] %></td>
-          <td width="65"><%= row[24] %></td>
+          <th width="65"><%= @sheet.cell(num+1,'C') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'E') %></th>
+          <th width="70"><%= @sheet.cell(num+1,'F') %></th>
+          <th width="65"><%= truncate(@sheet.cell(num+1,'G'), length: 8) %></th>
+          <th width="65"><%= @sheet.cell(num+1,'H') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'I') %></th>
+          <th width="45"><%= @sheet.cell(num+1,'J') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'K') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'L') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'M') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'N') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'O') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'P') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'Q') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'R') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'S') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'T') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'U') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'V') %></th>
+          <th width="65"><%= @sheet.cell(num+1,'W') %></th>
         </tr>
-      </table>
-    <% end %>
+      <% end %>
+      <% @last.times do |num|%>
+        <tr>
+          <td width="65"><%= @sheet.cell(num+5,'C') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'E') %></td>
+          <td width="70"><%= @sheet.cell(num+5,'F') %></td>
+          <td width="65"><%= truncate(@sheet.cell(num+5,'G'), length: 8) %></td>
+          <td width="65"><%= @sheet.cell(num+5,'H') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'I') %></td>
+          <td width="45"><%= @sheet.cell(num+5,'J') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'K') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'L') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'M') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'N') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'O') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'P') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'Q') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'R') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'S') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'T') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'U') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'V') %></td>
+          <td width="65"><%= @sheet.cell(num+5,'W') %></td>
+        </tr>
+      <% end %>
+    </table>
   </div>
 </main>
