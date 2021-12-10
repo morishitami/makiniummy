@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :code, format: {with: /\A\d{3}$|^\d{4}\z/, message: "(会員番号) can't be blank"}
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: ' Include both letters and numbers'}
         
+
+  has_one :actor
 end
 
 
