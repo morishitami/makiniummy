@@ -18,5 +18,33 @@
     </div>
   </div>
   <div class="detail">
+    <%= @sheet.each do |row| %>
+      <table border="1">
+        <tr>
+          <td width="65"><%= row[2] %></td>
+          <td width="65"><%= row[4] %></td>
+          <td width="65"><%= row[5] %></td>
+          <td width="65"><%= row[6] %></td>
+          <td width="65"><%= row[7] %></td>
+          <td width="65"><%= row[8] %></td>
+          <td width="65"><%= row[9] %></td>
+          <td width="65"><%= row[10] %></td>
+          <td width="65"><%= row[11] %></td>
+          <td width="65"><%= row[12] %></td>
+          <td width="65"><%= row[13] %></td>
+          <td width="65"><%= row[14] %></td>
+          <td width="65"><%= row[15] %></td>
+          <td width="65"><%= row[16] %></td>
+          <td width="65"><%= row[17] %></td>
+          <td width="65"><%= row[18] %></td>
+          <td width="65"><%= row[19] %></td>
+          <td width="65"><%= row[20] %></td>
+          <td width="65"><%= row[21] %></td>
+          <td width="65"><%= row[22] %></td>
+          <td width="65"><%= row[23] %></td>
+          <td width="65"><%= row[24] %></td>
+        </tr>
+      </table>
+    <% end %>
   </div>
 </main>
