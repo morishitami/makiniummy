@@ -331,6 +331,35 @@ a {
   font-size: 12px;
   font-weight: bold;
   text-align: center;
+  background-color: #fdfdfd;
+}
+
+.detail-data {
+  margin-top:100px;
+  z-index: 1;
+}
+
+.fixed {
+  position: sticky;
+  background-color: #fff;
+  z-index: 5;
+  top: 0;
+}
+
+.title1 {
+  top: 0px;
+}
+
+.title2 {
+  top: 20px;
+}
+
+.title3 {
+  top: 40px;
+}
+
+.title4 {
+  top: 60px;
 }
 
 .venue {
@@ -348,3 +377,4 @@ a {
 .audience {
   background-color: #d6eaff;
 }
+

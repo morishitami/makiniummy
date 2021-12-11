@@ -19,13 +19,13 @@
   </div>
   <div class="detail">
     <table border="1">
-        <tr class="title1">
+        <tr class="title1 fixed">
           <th colspan="17"><%= @sheet.cell(1,'C') %></th>
           <th width="65"><%= @sheet.cell(1,'U') %></th>
           <th width="65"><%= @sheet.cell(1,'V') %></th>
           <th width="65"><%= @sheet.cell(1,'W') %></th>
         </tr>
-        <tr class="title2">
+        <tr class="title2 fixed">
           <th width="65"><%= @sheet.cell(2,'D') %></th>
           <th colspan="2"><%= @sheet.cell(2,'F') %></th>
           <th width="100"><%= @sheet.cell(2,'G') %></th>
@@ -46,7 +46,7 @@
           <th width="65"><%= @sheet.cell(2,'V') %></th>
           <th width="65"><%= @sheet.cell(2,'W') %></th>
         </tr>
-        <tr class="title3">
+        <tr class="title3 fixed">
           <th colspan="7"><%= @sheet.cell(3,'A') %></th>
           <th colspan="3" class="venue"><%= @sheet.cell(3,'K') %></th>
           <th colspan="3" class="stream"><%= @sheet.cell(3,'N') %></th>
@@ -54,7 +54,7 @@
           <th colspan="3" class="audience"><%= @sheet.cell(3,'T') %></th>
           <th width="65"><%= @sheet.cell(3,'W') %></th>
         </tr>
-        <tr class="title4">
+        <tr class="title4 fixed">
           <th width="65"><%= @sheet.cell(4,'C') %></th>
           <th colspan="2"><%= @sheet.cell(4,'F') %></th>
           <th width="100"><%= @sheet.cell(4,'G') %></th>
@@ -74,8 +74,9 @@
           <th width="65" class="audience"><%= @sheet.cell(4,'U') %></th>
           <th width="65" class="audience"><%= @sheet.cell(4,'V') %></th>
           <th width="65"><%= @sheet.cell(4,'W') %></th>
+        </tr>
       <% @last.times do |num|%>
-        <tr>
+        <tr class="detail-data">
           <td width="65"><%= @sheet.cell(num+5,'C') %></td>
           <td width="65"><%= @sheet.cell(num+5,'E') %></td>
           <td width="90"><%= @sheet.cell(num+5,'F') %></td>
