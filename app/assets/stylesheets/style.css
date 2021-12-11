@@ -326,6 +326,26 @@ a {
   }
 }
 
+
+/* ーーーーーーー自作ーーーーーーーー */
+
+
+/* indexページ */
+.menu {
+  display: flex;
+  height: 100px;
+}
+
+.item {
+  /* background-color: aqua; */
+  width: 120px;
+  text-align: left;
+}
+
+.code{
+  margin-left: 10px;
+}
+
 /* user詳細ページ */
 .detail {
   font-size: 12px;
