@@ -3,18 +3,25 @@
     <% if user_signed_in? %>
       <div class="greeting">
         お疲れさまです、
-        <%= link_to "#{current_user.stage_name}さん", root_path, class: :greeting__link%>
+        <% unless current_user.stage_name == "" %>
+          <%= link_to "#{current_user.stage_name}さん", root_path, class: :greeting__link %>
+        <% else %>
+          <%= link_to "#{current_user.name}さん", root_path, class: :greeting__link%>
+        <% end %>
       </div>
       <div>
-        会員番号 <%= current_user.code %>
+        会員番号 <%= @code %>
       </div>
       <div>
         <p>
           <%= link_to "成績", user_path(current_user.id) %>
-          xランク カリスマ xxx位/yyy人
+          <%= "#{@sheet.cell(1,'U')}ランク #{@sheet.cell(1,'V')} #{@sheet.cell(1,'W')}位/#{@sheet.cell(1,'X')}人中" %>
         </p>
         <p>
-          あと zzzポイントで次のランクに上がります！
+          <%= "現在のMP：#{@sheet.cell(2,'X')}" %>
+        </p>
+        <p>
+          <%= "MP#{@sheet.cell(2,'W')}になると次のランクに上がります！" %>
         </p>
       </div>
       <div>

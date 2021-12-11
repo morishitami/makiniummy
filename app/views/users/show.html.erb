@@ -4,10 +4,13 @@
       会員番号 <%= @code %>
     </div>
     <div>
-      <%= @name %>
+      <% unless @stage_name == "" %>
+        <%= @stage_name %>さん
+      <% else %>
+       <%= @name %>さん
+      <% end %>
     </div>
     <div>
-      <%= @sheet.cell(2,'F') %>
       <p>
         <%= "#{@sheet.cell(1,'U')}ランク #{@sheet.cell(1,'V')} #{@sheet.cell(1,'W')}位/#{@sheet.cell(1,'X')}人中" %>
       </p>
