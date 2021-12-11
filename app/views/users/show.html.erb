@@ -28,10 +28,10 @@
         <tr class="title2">
           <th width="65"><%= @sheet.cell(2,'D') %></th>
           <th colspan="2"><%= @sheet.cell(2,'F') %></th>
-          <th width="70"><%= @sheet.cell(2,'G') %></th>
+          <th width="100"><%= @sheet.cell(2,'G') %></th>
           <th width="65"><%= @sheet.cell(2,'H') %></th>
           <th width="65"><%= @sheet.cell(2,'I') %></th>
-          <th width="65"><%= @sheet.cell(2,'J') %></th>
+          <th width="40"><%= @sheet.cell(2,'J') %></th>
           <th width="65"><%= @sheet.cell(2,'K') %></th>
           <th width="65"><%= @sheet.cell(2,'L') %></th>
           <th width="65"><%= @sheet.cell(2,'M') %></th>
@@ -48,53 +48,53 @@
         </tr>
         <tr class="title3">
           <th colspan="7"><%= @sheet.cell(3,'A') %></th>
-          <th colspan="3"><%= @sheet.cell(3,'K') %></th>
-          <th colspan="3"><%= @sheet.cell(3,'N') %></th>
-          <th colspan="3"><%= @sheet.cell(3,'Q') %></th>
-          <th colspan="3"><%= @sheet.cell(3,'T') %></th>
+          <th colspan="3" class="venue"><%= @sheet.cell(3,'K') %></th>
+          <th colspan="3" class="stream"><%= @sheet.cell(3,'N') %></th>
+          <th colspan="3" class="total"><%= @sheet.cell(3,'Q') %></th>
+          <th colspan="3" class="audience"><%= @sheet.cell(3,'T') %></th>
           <th width="65"><%= @sheet.cell(3,'W') %></th>
         </tr>
         <tr class="title4">
           <th width="65"><%= @sheet.cell(4,'C') %></th>
           <th colspan="2"><%= @sheet.cell(4,'F') %></th>
-          <th width="70"><%= @sheet.cell(4,'G') %></th>
+          <th width="100"><%= @sheet.cell(4,'G') %></th>
           <th width="65"><%= @sheet.cell(4,'H') %></th>
           <th width="65"><%= @sheet.cell(4,'I') %></th>
-          <th width="65"><%= @sheet.cell(4,'J') %></th>
-          <th width="65"><%= @sheet.cell(4,'K') %></th>
-          <th width="65"><%= @sheet.cell(4,'L') %></th>
-          <th width="65"><%= @sheet.cell(4,'M') %></th>
-          <th width="65"><%= @sheet.cell(4,'N') %></th>
-          <th width="65"><%= @sheet.cell(4,'O') %></th>
-          <th width="65"><%= @sheet.cell(4,'P') %></th>
-          <th width="65"><%= @sheet.cell(4,'Q') %></th>
-          <th width="65"><%= @sheet.cell(4,'R') %></th>
-          <th width="65"><%= @sheet.cell(4,'S') %></th>
-          <th width="65"><%= @sheet.cell(4,'T') %></th>
-          <th width="65"><%= @sheet.cell(4,'U') %></th>
-          <th width="65"><%= @sheet.cell(4,'V') %></th>
+          <th width="40"><%= @sheet.cell(4,'J') %></th>
+          <th width="65" class="venue"><%= @sheet.cell(4,'K') %></th>
+          <th width="65" class="venue"><%= @sheet.cell(4,'L') %></th>
+          <th width="65" class="venue"><%= @sheet.cell(4,'M') %></th>
+          <th width="65" class="stream"><%= @sheet.cell(4,'N') %></th>
+          <th width="65" class="stream"><%= @sheet.cell(4,'O') %></th>
+          <th width="65" class="stream"><%= @sheet.cell(4,'P') %></th>
+          <th width="65" class="total"><%= @sheet.cell(4,'Q') %></th>
+          <th width="65" class="total"><%= @sheet.cell(4,'R') %></th>
+          <th width="65" class="total"><%= @sheet.cell(4,'S') %></th>
+          <th width="65" class="audience"><%= @sheet.cell(4,'T') %></th>
+          <th width="65" class="audience"><%= @sheet.cell(4,'U') %></th>
+          <th width="65" class="audience"><%= @sheet.cell(4,'V') %></th>
           <th width="65"><%= @sheet.cell(4,'W') %></th>
       <% @last.times do |num|%>
         <tr>
           <td width="65"><%= @sheet.cell(num+5,'C') %></td>
           <td width="65"><%= @sheet.cell(num+5,'E') %></td>
-          <td width="70"><%= @sheet.cell(num+5,'F') %></td>
-          <td width="65"><%= truncate(@sheet.cell(num+5,'G'), length: 8) %></td>
+          <td width="90"><%= @sheet.cell(num+5,'F') %></td>
+          <td width="100"><%= truncate(@sheet.cell(num+5,'G'), length: 8) %></td>
           <td width="65"><%= @sheet.cell(num+5,'H') %></td>
           <td width="65"><%= @sheet.cell(num+5,'I') %></td>
-          <td width="45"><%= @sheet.cell(num+5,'J') %></td>
-          <td width="65"><%= @sheet.cell(num+5,'K') %></td>
-          <td width="65"><%= @sheet.cell(num+5,'L') %></td>
-          <td width="65"><%= @sheet.cell(num+5,'M') %></td>
-          <td width="65"><%= @sheet.cell(num+5,'N') %></td>
-          <td width="65"><%= @sheet.cell(num+5,'O') %></td>
-          <td width="65"><%= @sheet.cell(num+5,'P') %></td>
-          <td width="65"><%= @sheet.cell(num+5,'Q') %></td>
-          <td width="65"><%= @sheet.cell(num+5,'R') %></td>
-          <td width="65"><%= @sheet.cell(num+5,'S') %></td>
-          <td width="65"><%= @sheet.cell(num+5,'T') %></td>
-          <td width="65"><%= @sheet.cell(num+5,'U') %></td>
-          <td width="65"><%= @sheet.cell(num+5,'V') %></td>
+          <td width="40"><%= @sheet.cell(num+5,'J') %></td>
+          <td width="65" class="venue"><%= @sheet.cell(num+5,'K') %></td>
+          <td width="65" class="venue"><%= @sheet.cell(num+5,'L') %></td>
+          <td width="65" class="venue"><%= @sheet.cell(num+5,'M') %></td>
+          <td width="65" class="stream"><%= @sheet.cell(num+5,'N') %></td>
+          <td width="65" class="stream"><%= @sheet.cell(num+5,'O') %></td>
+          <td width="65" class="stream"><%= @sheet.cell(num+5,'P') %></td>
+          <td width="65" class="total"><%= @sheet.cell(num+5,'Q') %></td>
+          <td width="65" class="total"><%= @sheet.cell(num+5,'R') %></td>
+          <td width="65" class="total"><%= @sheet.cell(num+5,'S') %></td>
+          <td width="65" class="audience"><%= @sheet.cell(num+5,'T') %></td>
+          <td width="65" class="audience"><%= @sheet.cell(num+5,'U') %></td>
+          <td width="65" class="audience"><%= @sheet.cell(num+5,'V') %></td>
           <td width="65"><%= @sheet.cell(num+5,'W') %></td>
         </tr>
       <% end %>

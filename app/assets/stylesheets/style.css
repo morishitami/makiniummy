@@ -325,3 +325,26 @@ a {
     width: 100%;
   }
 }
+
+/* user詳細ページ */
+.detail {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.venue {
+  background-color: #eaffd6;
+}
+
+.stream {
+  background-color: #ffffd6;
+}
+
+.total {
+  background-color: #ffead6;
+}
+
+.audience {
+  background-color: #d6eaff;
+}
