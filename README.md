@@ -18,36 +18,36 @@
 - has_many :staffs
 - has_one  :actor
 
-## methodsテーブル
+## questionsテーブル
 
-| Column   | Type       | Options                        |
-|----------|------------|--------------------------------|
-| 1st      | boolean    | null: false                    |
-| 2nd      | boolean    | null: false                    |
-| 3rd      | boolean    | null: false                    |
-| 4th      | boolean    | null: false                    |
-| 5th      | boolean    | null: false                    |
-| 6th      | boolean    | null: false                    |
-| 7th      | boolean    | null: false                    |
-| 8th      | boolean    | null: false                    |
-| 9th      | boolean    | null: false                    |
-| 10th     | boolean    | null: false                    |
-| 11th     | boolean    | null: false                    |
-| 12th     | boolean    | null: false                    |
-| 13th     | boolean    | null: false                    |
-| 14th     | boolean    | null: false                    |
-| 15th     | boolean    | null: false                    |
-| 16th     | boolean    | null: false                    |
-| 17th     | boolean    | null: false                    |
-| 18th     | boolean    | null: false                    |
-| 19th     | boolean    | null: false                    |
-| 20th     | boolean    | null: false                    |
-| 21th     | boolean    | null: false                    |
-| 22th     | boolean    | null: false                    |
-| 23th     | boolean    | null: false                    |
-| 24th     | boolean    | null: false                    |
-| 25th     | boolean    | null: false                    |
-| user     | references | null: false, foreign_key: true |
+| Column  | Type       | Options                        |
+|---------|------------|--------------------------------|
+| q1      | boolean    | null: false                    |
+| q2      | boolean    | null: false                    |
+| q3      | boolean    | null: false                    |
+| q4      | boolean    | null: false                    |
+| q5      | boolean    | null: false                    |
+| q6      | boolean    | null: false                    |
+| q7      | boolean    | null: false                    |
+| q8      | boolean    | null: false                    |
+| q9      | boolean    | null: false                    |
+| q10     | boolean    | null: false                    |
+| q11     | boolean    | null: false                    |
+| q12     | boolean    | null: false                    |
+| q13     | boolean    | null: false                    |
+| q14     | boolean    | null: false                    |
+| q15     | boolean    | null: false                    |
+| q16     | boolean    | null: false                    |
+| q17     | boolean    | null: false                    |
+| q18     | boolean    | null: false                    |
+| q19     | boolean    | null: false                    |
+| q20     | boolean    | null: false                    |
+| q21     | boolean    | null: false                    |
+| q22     | boolean    | null: false                    |
+| q23     | boolean    | null: false                    |
+| q24     | boolean    | null: false                    |
+| q25     | boolean    | null: false                    |
+| user    | references | null: false, foreign_key: true |
 
 ### Association
 

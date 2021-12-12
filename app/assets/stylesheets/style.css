@@ -363,7 +363,7 @@ a {
   position: sticky;
   background-color: #fff;
   z-index: 5;
-  top: 0;
+  height: 20px;
 }
 
 .title1 {
