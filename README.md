@@ -51,7 +51,7 @@
 
 ### Association
 
-- belong_to :user
+- belongs_to :user
 
 ## staffsテーブル
 
@@ -64,7 +64,7 @@
 
 ### Association
 
-- belong_to :user
+- belongs_to :user
 
 ## actorsテーブル
 
@@ -76,7 +76,7 @@
 
 ### Association
 
-- belong_to :user
+- belongs_to :user
 - has_many  :past_acts
 - has_many  :past_directs
 - has_one   :next_program
@@ -93,7 +93,7 @@
 
 ### Association
 
-- belong_to :actor
+- belongs_to :actor
 
 ## past_directsテーブル
 
@@ -107,7 +107,7 @@
 
 ### Association
 
-- belong_to :actor
+- belongs_to :actor
 
 ## next_programsテーブル
 
@@ -121,4 +121,4 @@
 
 ### Association
 
-- belong_to :actor
+- belongs_to :actor
