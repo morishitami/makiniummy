@@ -10,7 +10,7 @@ class User < ApplicationRecord
         
 
   has_one :actor
-  has_one :actor
+  has_one :question
 
 end
 
