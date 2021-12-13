@@ -1,0 +1,66 @@
+<main class="main">
+  <div class="inner">
+    <% if user_signed_in? %>
+
+      <div class ="menu">
+        <div class="greeting">
+          お疲れさまです、
+          <% unless current_user.stage_name == "" %>
+            <%= link_to "#{current_user.stage_name}さん", root_path, class: :greeting__link %>
+          <% else %>
+            <%= link_to "#{current_user.name}さん", root_path, class: :greeting__link%>
+          <% end %>
+        </div>
+        <div class ="item code">
+          (俳優番号<%= @code %>)
+        </div>
+      </div>
+
+      <div class ="menu">
+        <div class ="item">
+          <%= link_to "成績", user_path(current_user.id) %>
+        </div>
+        <div class="grade">
+          <p class="grade1">
+          <%= "#{@sheet.cell(1,'U')}ランク #{@sheet.cell(1,'V')} #{@sheet.cell(1,'W')}位/#{@sheet.cell(1,'X')}人中" %>
+          </p>
+          <p class="grade2">
+          <%= "現在のMP：#{@sheet.cell(2,'X')}" %>
+          </p>
+          <p class="grade3">
+            <%= "MP#{@sheet.cell(2,'W')}になると次のランクに上がります！" %>
+          </p>
+        </div>
+      </div>
+
+      <div class ="menu">
+        <div class ="item">
+          <%= link_to "メソッド問題", question_path(current_user.id) %>
+          メソッド問題
+        </div>
+        <div class ="method%">
+        xx%回答済
+        </div>
+      </div>
+
+      <div class ="menu">
+        <div class ="item">
+          スタッフ実績
+        </div>
+        <div class="staff-ganre">
+          音響 照明 ライブビューイング カメラ
+        </div>
+      </div>
+
+      <div>
+        俳優ページの作成・編集
+      </div>
+
+
+    <% end %>
+    <div class="card__wrapper">
+      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+    </div>
+  </div>
+  
+</main>
