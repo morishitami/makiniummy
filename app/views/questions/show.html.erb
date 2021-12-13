@@ -5,27 +5,22 @@
 
     <div class="volume">
       <h3>モチベーション編</h3>
+      <%= form_with model:@question, url: questions_path,local: true do |f|%>
+
       <div class="question">
         <div class="method">
           <%= link_to "①ようこそ、マキニウムへ。（7分1秒）", "https://band.us/band/82802925/post/93", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q1 %>
         </div>
-      </div>
-
-
-
-
-
-
-
-
-      
+      </div>      
       <div class="question">
         <div class="method">
           <%= link_to "②マキニウムのシステム マキニウムでやれること（2分45秒）", "https://band.us/band/82802925/post/93", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q2 %>
         </div>
       </div>
       <div class="question">
@@ -33,6 +28,7 @@
           <%= link_to "③自己紹介（7分51秒）", "https://band.us/band/82802925/post/93", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q3 %>
         </div>
       </div>
       <div class="question">
@@ -40,6 +36,7 @@
           <%= link_to "④マキニウムのルール（2分21秒）", "https://band.us/band/82802925/post/93", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q4 %>
         </div>
       </div>
       <div class="question">
@@ -47,6 +44,7 @@
           <%= link_to "⑤基本的な考え方（9分25秒）", "https://band.us/band/82802925/post/93", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q5 %>
         </div>
       </div>
       <div class="question">
@@ -54,6 +52,7 @@
           <%= link_to "⑥マインドセットとは？（15分55秒）", "https://band.us/band/82802925/post/93", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q6 %>
         </div>
       </div>
       <div class="question">
@@ -61,6 +60,7 @@
           <%= link_to "⑦マインドセットを身につける（9分43秒）", "https://band.us/band/82802925/post/93", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q7 %>
         </div>
       </div>
       <div class="question">
@@ -68,6 +68,7 @@
           <%= link_to "⑧目標を書き出す（6分28秒）", "https://band.us/band/82802925/post/93", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q8 %>
         </div>
       </div>
       <div class="question">
@@ -75,6 +76,7 @@
           <%= link_to "⑨継続して成長していくために（8分32秒）", "https://band.us/band/82802925/post/93", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q9 %>
         </div>
       </div>
       <div class="question">
@@ -82,6 +84,7 @@
           <%= link_to "⑩重要な補足事項（5分29秒）", "https://band.us/band/82802925/post/93", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q10 %>
         </div>
       </div>
     </div>
@@ -93,6 +96,7 @@
           <%= link_to "⑪“マキニウム式”とは（6分17秒）", "https://band.us/band/82802925/post/94", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q11 %>
         </div>
       </div>
         <div class="question">
@@ -100,6 +104,7 @@
           <%= link_to "⑫“いい演技”とは（5分41秒）", "https://band.us/band/82802925/post/94", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q12 %>
         </div>
       </div>
       <div class="question">
@@ -107,6 +112,7 @@
           <%= link_to "⑬“いい演技”を目指す矛盾（4分21秒）", "https://band.us/band/82802925/post/94", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q13 %>
         </div>
       </div>
       <div class="question">
@@ -114,6 +120,7 @@
           <%= link_to "⑭マキニウム式は自己表現（3分16秒）", "https://band.us/band/82802925/post/94", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q14 %>
         </div>
       </div>
       <div class="question">
@@ -121,6 +128,7 @@
           <%= link_to "⑮スキキライで取り組むこと（4分04秒）", "https://band.us/band/82802925/post/94", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q15 %>
         </div>
       </div>
       <div class="question">
@@ -128,6 +136,7 @@
           <%= link_to "⑯スキキライによって起こること（8分03秒）", "https://band.us/band/82802925/post/94", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q16 %>
         </div>
       </div>
       <div class="question">
@@ -135,6 +144,7 @@
           <%= link_to "⑰成長を阻む壁（2分30秒）", "https://band.us/band/82802925/post/94", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q17 %>
         </div>
       </div>
       <div class="question">
@@ -142,6 +152,7 @@
           <%= link_to "⑱思いこみ自信をつける（5分06秒）", "https://band.us/band/82802925/post/94", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q18 %>
         </div>
       </div>
     </div>
@@ -153,6 +164,7 @@
           <%= link_to "⑲（１）稽古を進めるイメージ（7分41秒）", "https://band.us/band/82802925/post/98", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q19 %>
         </div>
       </div>
         <div class="question">
@@ -160,6 +172,7 @@
           <%= link_to "⑳（２）セリフの印象付けと自己表現（5分42秒）", "https://band.us/band/82802925/post/98", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q20 %>
         </div>
       </div>
       <div class="question">
@@ -167,6 +180,7 @@
           <%= link_to "㉑（３）稽古の進め方の基本（11分40秒）", "https://band.us/band/82802925/post/98", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q21 %>
         </div>
       </div>
       <div class="question">
@@ -174,6 +188,7 @@
           <%= link_to "㉒（４）セリフを効率よく印象付けていくために（7分34秒）", "https://band.us/band/82802925/post/98", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q22 %>
         </div>
       </div>
       <div class="question">
@@ -181,6 +196,7 @@
           <%= link_to "㉓（５）稽古初期（5分48秒）", "https://band.us/band/82802925/post/98", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q23 %>
         </div>
       </div>
       <div class="question">
@@ -188,6 +204,7 @@
           <%= link_to "㉔（６）稽古中期（8分02秒）", "https://band.us/band/82802925/post/98", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q24 %>
         </div>
       </div>
       <div class="question">
@@ -195,6 +212,7 @@
           <%= link_to "㉕（７）進化し続けるために重要なこと（11分11秒）", "https://band.us/band/82802925/post/98", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q25 %>
         </div>
       </div>
       <div class="question">
@@ -202,6 +220,7 @@
           <%= link_to "㉖（８）チームで成功するために（4分36秒）", "https://band.us/band/82802925/post/98", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q26 %>
         </div>
       </div>
       <div class="question">
@@ -209,6 +228,7 @@
           <%= link_to "㉗（９）「演出」とどう向き合うか（4分50秒）", "https://band.us/band/82802925/post/98", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q27 %>
         </div>
       </div>
       <div class="question">
@@ -216,6 +236,7 @@
           <%= link_to "㉘（１０）【ホンネ】も高める稽古後期（9分40秒）", "https://band.us/band/82802925/post/98", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q28 %>
         </div>
       </div>
       <div class="question">
@@ -223,6 +244,7 @@
           <%= link_to "㉚（１１）本番に向けて必要なこと（10分28秒）", "https://band.us/band/82802925/post/99", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q30 %>
         </div>
       </div>
         <div class="question">
@@ -230,6 +252,7 @@
           <%= link_to "㉛（１２）ピンチになったら（1分32秒）", "https://band.us/band/82802925/post/94", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q31 %>
         </div>
       </div>
       <div class="question">
@@ -237,6 +260,7 @@
           <%= link_to "㉜（１４）本番前（1分43秒）", "https://band.us/band/82802925/post/94", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q32 %>
         </div>
       </div>
       <div class="question">
@@ -244,8 +268,16 @@
           <%= link_to "㉝（１５）本番を終えたら（6分22秒）", "https://band.us/band/82802925/post/94", target: :_blank, rel: "noopener noreferrer" %>
         </div>
         <div class="check">
+          <%= f.check_box :q33 %>
         </div>
       </div>
     </div>
+
+      <div class="actions">
+        <%= f.submit "送信する", class: :form__btn  %>
+      </div>
+      <% end %>
+
+
 </div>
 
