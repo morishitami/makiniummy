@@ -399,3 +399,17 @@ a {
 }
 
 /* questions詳細ページ */
+.question {
+  display: flex;
+  height: 30px;
+  width: 500px;
+  border: #b0c4de 1px solid;
+}
+
+.method {
+  width: 470px;
+}
+
+.volume {
+  margin-bottom: 20px;
+}
