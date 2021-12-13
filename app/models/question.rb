@@ -25,6 +25,15 @@ class Question < ApplicationRecord
     validates :q23
     validates :q24
     validates :q25
+    validates :q26
+    validates :q27
+    validates :q28
+    # q29欠番
+    validates :q30
+    validates :q31
+    validates :q32
+    validates :q33
+
   end
 
   belongs_to :user

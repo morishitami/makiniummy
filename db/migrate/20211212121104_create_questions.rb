@@ -26,6 +26,14 @@ class CreateQuestions < ActiveRecord::Migration[6.0]
       t.boolean :q23,         null: false
       t.boolean :q24,         null: false
       t.boolean :q25,         null: false
+      t.boolean :q26,         null: false
+      t.boolean :q27,         null: false
+      t.boolean :q28,         null: false
+      # 29欠番
+      t.boolean :q30,         null: false
+      t.boolean :q31,         null: false
+      t.boolean :q32,         null: false
+      t.boolean :q33,         null: false
       t.references :user,    null: false, foreign_key: true
       t.timestamps
     end

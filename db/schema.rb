@@ -47,6 +47,13 @@ ActiveRecord::Schema.define(version: 2021_12_12_121104) do
     t.boolean "q23", null: false
     t.boolean "q24", null: false
     t.boolean "q25", null: false
+    t.boolean "q26", null: false
+    t.boolean "q27", null: false
+    t.boolean "q28", null: false
+    t.boolean "q30", null: false
+    t.boolean "q31", null: false
+    t.boolean "q32", null: false
+    t.boolean "q33", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
