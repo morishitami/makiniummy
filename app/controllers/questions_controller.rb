@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.create!(question_params)
-    redirect_to edit_question_path(@question.user)
+    redirect_to edit_user_question_path(@question.user, @question)
   end
 
   def edit
@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     @question.update(question_params)
-    redirect_to edit_question_path(@question.user)
+    redirect_to edit_user_question_path(@question.user, @question)
   end
 
 

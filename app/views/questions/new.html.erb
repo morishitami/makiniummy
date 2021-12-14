@@ -2,11 +2,10 @@
 メソッド問題
 </div>
 <div class="questions">
+  <%= form_with model:@question, url: user_questions_path,local: true do |f|%>
 
     <div class="volume">
       <h3>モチベーション編</h3>
-      <%= form_with model:@question, url: questions_path,local: true do |f|%>
-
       <div class="question">
         <div class="method">
           <%= link_to "①ようこそ、マキニウムへ。（7分1秒）", "https://band.us/band/82802925/post/93", target: :_blank, rel: "noopener noreferrer" %>
@@ -281,11 +280,9 @@
       </div>
     </div>
 
-      <div class="actions">
-        <%= f.submit "送信する", class: :form__btn  %>
-      </div>
-      <% end %>
-
-
+    <div class="actions">
+      <%= f.submit "送信する", class: :form__btn  %>
+    </div>
+  <% end %>
 </div>
 
