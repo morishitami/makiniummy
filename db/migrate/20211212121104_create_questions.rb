@@ -29,7 +29,7 @@ class CreateQuestions < ActiveRecord::Migration[6.0]
       t.boolean :q26,         null: false
       t.boolean :q27,         null: false
       t.boolean :q28,         null: false
-      # 29欠番
+      t.boolean :q29,         null: false
       t.boolean :q30,         null: false
       t.boolean :q31,         null: false
       t.boolean :q32,         null: false

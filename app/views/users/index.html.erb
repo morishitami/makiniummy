@@ -35,8 +35,8 @@
 
       <div class ="menu">
         <div class ="item">
-          <%= link_to "メソッド問題", question_path(current_user.id) %>
-          メソッド問題
+          <%= link_to "メソッド問題", new_question_path(current_user.id) %>
+          <%= link_to "メソッド問題(更新)", edit_question_path(current_user.id) %>
         </div>
         <div class ="method%">
         xx%回答済
