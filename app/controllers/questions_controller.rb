@@ -13,9 +13,9 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    binding.pry
+    @question = Question.find(params[:id])
     @question.update(question_params)
-    quredirect_to question_path(@question.user)
+    redirect_to edit_question_path(@question.user)
   end
 
 
