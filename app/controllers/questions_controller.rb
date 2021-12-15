@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def new
-    @question = Question.new
+    @question = Question.find_or_initialize_by(user_id: current_user.id)
   end
 
   def create
