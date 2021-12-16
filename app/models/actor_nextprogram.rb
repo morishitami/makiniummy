@@ -1,10 +1,10 @@
 class ActorNextprogram
   include ActiveModel::Model
-  attr_accessor :time, :comment, :user_id, :schedule, :show, :stage, :author, :actor_id
+  attr_accessor :comment, :user_id, :schedule, :show, :stage, :author, :actor_id
 
   with_options presence: true do
-    validates :time, numericality: true
     validates :user_id
+    validates :image
     validates :schedule
     validates :show
     validates :stage
@@ -13,7 +13,7 @@ class ActorNextprogram
   end
 
   def save
-    actor = Actor.create(time: time, comment: comment, user_id: user_id)
+    actor = Actor.create(comment: comment, user_id: user_id)
     Address.create(schedule: schedule, show: show, stage: stage, author: author, actor_id: actor.id)
   end
 end

@@ -78,7 +78,6 @@
 
 | Column  | Type       | Options                        |
 |---------|------------|--------------------------------|
-| time    | float      | null: false                    |
 | comment | text       |                                |
 | user    | references | null: false, foreign_key: true |
 

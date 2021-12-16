@@ -1,6 +1,27 @@
-    <div>
-    <%= form_with model:@actor_nextprogram, url:user_actors_path, local: true do |f| %>
+<div>
+  <%= form_with model:@actor_nextprogram, url:user_actors_path, local: true do |f| %>
 
-    
+  <%= render 'shared/error_messages',{ model: f.object} %>
+  <%# Actor情報の入力 %>
+  <div class="actor">
+    <h2>
+    俳優情報
+    </h2>
+    <div class="form">
+      <div class="form-content">
+        <div class="form-lavel">
+          画像（必須）
+        </div>
+        <%= f.file_field :image, class:"actor-image" %>
+      </div>
+      <div class="form-content">
+        <div class="form-lavel">
+          コメント
+        </div>
+        <%= f.text_area :comment, class:"comment" %>
+      </div>
+    </div> 
+  </div>
+  <%# NextProgram情報の入力 %>
     <% end %>
     </div>
