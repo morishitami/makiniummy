@@ -47,6 +47,14 @@
 | q23     | boolean    | null: false                    |
 | q24     | boolean    | null: false                    |
 | q25     | boolean    | null: false                    |
+| q26     | boolean    | null: false                    |
+| q27     | boolean    | null: false                    |
+| q28     | boolean    | null: false                    |
+| q29     | boolean    | null: false                    |
+| q30     | boolean    | null: false                    |
+| q31     | boolean    | null: false                    |
+| q32     | boolean    | null: false                    |
+| q33     | boolean    | null: false                    |
 | user    | references | null: false, foreign_key: true |
 
 ### Association
@@ -77,39 +85,9 @@
 ### Association
 
 - belongs_to :user
-- has_many  :past_acts
-- has_many  :past_directs
-- has_one   :next_program
+- has_one   :nextprogram
 
-## past_actsテーブル
-
-| Column   | Type       | Options                        |
-|----------|------------|--------------------------------|
-| show     | string     | null: false                    |
-| stage    | string     | null: false                    |
-| average  | float      | null: false                    |
-| high     | float      | null: false                    |
-| actor    | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :actor
-
-## past_directsテーブル
-
-| Column   | Type       | Options                        |
-|----------|------------|--------------------------------|
-| show     | string     | null: false                    |
-| stage    | string     | null: false                    |
-| average  | float      | null: false                    |
-| high     | float      | null: false                    |
-| actor    | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :actor
-
-## next_programsテーブル
+## nextprogramsテーブル
 
 | Column   | Type       | Options                        |
 |----------|------------|--------------------------------|

@@ -1,0 +1,2 @@
+class Nextprogram < ApplicationRecord
+end
