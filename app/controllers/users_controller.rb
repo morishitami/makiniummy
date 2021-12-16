@@ -5,8 +5,13 @@ class UsersController < ApplicationController
       @scode = @code.to_s
       @xlsx = Roo::Excelx.new("test-data.xlsx")
       @sheet = @xlsx.sheet(@scode)
-      @question = Question.all
+      unless current_user.question == nil
+        @user = User.find(current_user.id)
+        @questions = Question.where(user_id: @user.id).pluck(:q1, :q2, :q3, :q4, :q5, :q6)
+      end
     end
+
+
   end
 
   def show

@@ -37,9 +37,20 @@
         <div class ="item">
           <%= link_to "メソッド問題", new_user_question_path(current_user) %>
         </div>
-        <div class ="method%">
-        xx%回答済
+
+        <% unless current_user.question == nil %>
+        <div class ="answered">
+          <% @questions.each do |answers| %>
+            <% answers %>
+            <% @answers_all = answers %>
+          <% end %>
+          <% @answers = @answers_all.count(true) %>
+          <%= "#{@answers}/33問 回答しました！" %>
+          <p class="answered%">
+          <%= "回答率#{((@answers.to_f / 33) * 100).round(1)}%" %>
+          </p>
         </div>
+        <% end %>
       </div>
 
       <div class ="menu">
