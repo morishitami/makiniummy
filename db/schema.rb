@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_15_134204) do
+ActiveRecord::Schema.define(version: 2021_12_16_075010) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 2021_12_15_134204) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_actors_on_user_id"
+  end
+
+  create_table "nextprograms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "schedule", null: false
+    t.string "show", null: false
+    t.string "stage", null: false
+    t.string "author", null: false
+    t.bigint "actor_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["actor_id"], name: "index_nextprograms_on_actor_id"
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -99,5 +110,6 @@ ActiveRecord::Schema.define(version: 2021_12_15_134204) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "actors", "users"
+  add_foreign_key "nextprograms", "actors"
   add_foreign_key "questions", "users"
 end

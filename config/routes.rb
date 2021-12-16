@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: "users#index"
   resources :users, only: [:index, :show] do
     resources :questions, only: [:new, :create, :edit, :update]
+    resources :actors, only: [:show, :new, :create, :edit, :update]
   end
 end
