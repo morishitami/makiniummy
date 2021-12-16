@@ -8,7 +8,7 @@
 |--------------------|--------|---------------------------|
 | code               | string | null: false               |
 | name               | string | null: false               |
-| stage_name         | string | null: false               |
+| stage_name         | string |                           |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
 
@@ -79,7 +79,7 @@
 | Column  | Type       | Options                        |
 |---------|------------|--------------------------------|
 | time    | float      | null: false                    |
-| comment | text       | null: false                    |
+| comment | text       |                                |
 | user    | references | null: false, foreign_key: true |
 
 ### Association
