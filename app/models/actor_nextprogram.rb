@@ -1,6 +1,6 @@
 class ActorNextprogram
   include ActiveModel::Model
-  attr_accessor :comment, :user_id, :schedule, :show, :stage, :author, :actor_id
+  attr_accessor :comment, :user_id, :image, :schedule, :show, :stage, :author, :actor_id
 
   with_options presence: true do
     validates :user_id
@@ -9,11 +9,10 @@ class ActorNextprogram
     validates :show
     validates :stage
     validates :author
-    validates :actor_id
   end
 
   def save
-    actor = Actor.create(comment: comment, user_id: user_id)
-    Address.create(schedule: schedule, show: show, stage: stage, author: author, actor_id: actor.id)
+    actor = Actor.create(comment: comment, user_id: user_id, image: image)
+    Nextprogram.create(schedule: schedule, show: show, stage: stage, author: author, actor_id: actor.id)
   end
 end

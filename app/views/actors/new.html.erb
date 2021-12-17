@@ -1,27 +1,70 @@
 <div>
   <%= form_with model:@actor_nextprogram, url:user_actors_path, local: true do |f| %>
 
-  <%= render 'shared/error_messages',{ model: f.object} %>
-  <%# Actor情報の入力 %>
-  <div class="actor">
+    <%= render 'shared/error_messages',{ model: f.object} %>
+    <%# Actor情報の入力 %>
+    <div class="actor">
+      <h2>
+      俳優情報
+      </h2>
+      <div class="form">
+        <div class="form-content">
+          <div class="form-lavel">
+            画像（必須）
+          </div>
+          <%= f.file_field :image, class:"actor-image" %>
+        </div>
+
+        <div class="form-content">
+          <div class="form-lavel">
+            コメント
+          </div>
+          <%= f.text_area :comment, class:"comment" %>
+        </div>
+      </div> 
+    </div>
+
+    <%# NextProgram情報の入力 %>
+    <div class="nextprogram">
     <h2>
-    俳優情報
+    次回公演情報
     </h2>
+
     <div class="form">
       <div class="form-content">
         <div class="form-lavel">
-          画像（必須）
+          日程
         </div>
-        <%= f.file_field :image, class:"actor-image" %>
+        <div class="schedule">
+          <%= f.text_field :schedule, placeholder:"例）2021/01/13" %>
+        </div>
       </div>
+
       <div class="form-content">
         <div class="form-lavel">
-          コメント
+          公演名
         </div>
-        <%= f.text_area :comment, class:"comment" %>
+        <%= f.text_field :show, class:"program" %>
+      </div>
+
+      <div class="form-content">
+        <div class="form-lavel">
+          作品名
+        </div>
+        <%= f.text_field :stage, class:"program" %>
+      </div>
+
+      <div class="form-content">
+        <div class="form-lavel">
+          作・演出
+        </div>
+        <%= f.text_field :author, class:"program" %>
       </div>
     </div> 
-  </div>
-  <%# NextProgram情報の入力 %>
-    <% end %>
+
+    <div class="actions">
+      <%= f.submit "送信する", class: :form__btn  %>
     </div>
+
+  <% end %>
+</div>
