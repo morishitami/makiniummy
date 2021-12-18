@@ -17,20 +17,24 @@
       </div>
 
       <div class ="menu">
-        <div class ="item">
-          <%= link_to "成績", user_path(current_user.id) %>
-        </div>
-        <div class="grade">
-          <p class="grade1">
-          <%= "#{@sheet.cell(1,'U')}ランク #{@sheet.cell(1,'V')} #{@sheet.cell(1,'W')}位/#{@sheet.cell(1,'X')}人中" %>
-          </p>
-          <p class="grade2">
-          <%= "現在のMP：#{@sheet.cell(2,'X')}" %>
-          </p>
-          <p class="grade3">
-            <%= "MP#{@sheet.cell(2,'W')}になると次のランクに上がります！" %>
-          </p>
-        </div>
+        <% if @sheet == "none" %>
+          成績はまだありません。
+        <% else %>
+          <div class ="item">
+            <%= link_to "成績", user_path(current_user.id) %>
+          </div>
+          <div class="grade">
+            <p class="grade1">
+            <%= "#{@sheet.cell(1,'U')}ランク #{@sheet.cell(1,'V')} #{@sheet.cell(1,'W')}位/#{@sheet.cell(1,'X')}人中" %>
+            </p>
+            <p class="grade2">
+            <%= "現在のMP：#{@sheet.cell(2,'X')}" %>
+            </p>
+            <p class="grade3">
+              <%= "MP#{@sheet.cell(2,'W')}になると次のランクに上がります！" %>
+            </p>
+          </div>
+        <% end %>
       </div>
 
       <div class ="menu">
@@ -64,7 +68,9 @@
 
       <div>
         <%= link_to "俳優ページの作成・編集", new_user_actor_path(current_user) %>
+        <% unless current_user.actor == nil %>
         <%= link_to "俳優ページの確認", user_actor_path(current_user.id, @actor) %>
+        <% end %>
       </div>
 
 
