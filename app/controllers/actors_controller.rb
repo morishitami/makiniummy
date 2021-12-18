@@ -8,7 +8,8 @@ class ActorsController < ApplicationController
     @actor_nextprogram = ActorNextprogram.new(actor_params)
     if @actor_nextprogram.valid?
       @actor_nextprogram.save
-      redirect_to root_path
+      @actor = Actor.where(user_id: current_user.id).pluck(:id)
+      redirect_to user_actor_path(current_user.id, @actor)
     else
       render :new
     end
@@ -16,6 +17,16 @@ class ActorsController < ApplicationController
 
   def show
     @actor = Actor.find(params[:id])
+    @nextprogram = @actor.nextprogram
+    @code = current_user.code
+    @scode = @code.to_s
+    @xlsx = Roo::Excelx.new("test-data.xlsx")
+    begin
+      @sheet = @xlsx.sheet(@scode)
+      @last =@sheet.last_row - 4
+    rescue
+      @sheet = "none"
+    end
   end
 
   private

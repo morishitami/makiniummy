@@ -1,3 +1,76 @@
- <h1>show</h1>
- <div>
- 
+<div class="actor-show">
+  <div class="we-are-makinium">
+    マキニウムの人たち
+  <div class="actor">
+    <h2 class="stage-name">
+      <%= current_user.stage_name %>
+    </h2>
+    <h3 class="times">
+      <% unless @sheet == "none" %>
+        <%= "マキニウム出演回数：#{@sheet.cell(2,'H')}回" %>
+      <% end %>
+    </h3>
+    <div class="actor-image">
+      <%= image_tag @actor.image, class: "actor-img" %>
+    </div>
+    <div class="comment">
+      <%= @actor.comment %>
+    </div>
+  </div>
+
+  <div class="next-program">
+    <div class="schedule">
+      <%= "日程：#{@nextprogram.schedule}" %>
+    </div>
+    <div class="show">
+      <%= @nextprogram.show %>
+    </div>
+    <div class="stage">
+      <%= @nextprogram.stage %>
+    </div>
+    <div class="author">
+      <%= @nextprogram.author %>
+    </div>
+    <div class="next-detail">
+      <%= link_to "詳細はこちら！", "https://www.makinium.com/%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89/", target: :_blank, rel: "noopener noreferrer" %>
+  </div>
+
+  <div class="past">
+    <% if @sheet == "none" %>
+      過去の出演作はまだありません。
+    <% else %>
+      これまでに出演した作品
+      <div class="past-programs">
+        <% @last.times do |num|%>
+          <% if @sheet.cell(num+5,'J') > 0 %>
+            <div class="past-program">
+              <div class="year">
+                <%= @sheet.cell(num+5,'C') %>
+              </div>
+              <div class="past-show">
+                <%= @sheet.cell(num+5,'F') %>
+              </div>
+              <div class="past-details">
+                <p class="past-detail">
+                  <%= @sheet.cell(num+5,'G') %>
+                </p>
+                <p class="past-detail">
+                  <%= "俳優支持率（平均）#{@sheet.cell(num+5,'G')}%" %>
+                </p>
+                <p class="past-detail">
+                  <%= "ステージ別最高俳優支持率 #{@sheet.cell(num+5,'G')}%" %>
+                </p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="page-actions">
+  <% if user_signed_in? && current_user.id == @actor.user_id %>
+    <%= link_to "編集する", edit_user_actor_path(current_user.id, @actor) %>
+  <% end %>
+</div>

@@ -10,12 +10,10 @@ class UsersController < ApplicationController
         @sheet = "none"
       end
       unless current_user.question == nil
-        @user = User.find(current_user.id)
-        @questions = Question.where(user_id: @user.id).pluck(:q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :q10, :q11, :q12, :q13, :q14, :q15, :q16, :q17, :q18, :q19, :q20, :q21, :q22, :q23, :q24, :q25, :q26, :q27, :q28, :q29, :q30, :q31, :q32, :q33)
+        @questions = Question.where(user_id: current_user.id).pluck(:q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :q10, :q11, :q12, :q13, :q14, :q15, :q16, :q17, :q18, :q19, :q20, :q21, :q22, :q23, :q24, :q25, :q26, :q27, :q28, :q29, :q30, :q31, :q32, :q33)
       end
       unless current_user.actor == nil
-        @user = User.find(current_user.id)
-        @actor = Actor.where(user_id: @user.id).pluck(:id)
+        @actor = Actor.where(user_id: current_user.id).pluck(:id)
       end
     end
 

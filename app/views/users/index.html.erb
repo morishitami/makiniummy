@@ -66,11 +66,24 @@
         </div>
       </div>
 
-      <div>
-        <%= link_to "俳優ページの作成・編集", new_user_actor_path(current_user) %>
-        <% unless current_user.actor == nil %>
-        <%= link_to "俳優ページの確認", user_actor_path(current_user.id, @actor) %>
-        <% end %>
+      <div class ="menu">
+        <div class ="item">
+          俳優ページ
+        </div>
+        <div class="page-actions">
+          <% if current_user.actor == nil %>
+            <p class = "page-action">
+              <%= link_to "作成する", new_user_actor_path(current_user) %>
+            </p>
+          <% else %>
+            <p class = "page-action">
+              <%= link_to "編集する", edit_user_actor_path(current_user.id, @actor) %>
+            </p>
+            <p class = "page-action">
+              <%= link_to "公開ページを確認する", user_actor_path(current_user.id, @actor) %>
+            </p>
+          <% end %>
+        <div>
       </div>
 
 
