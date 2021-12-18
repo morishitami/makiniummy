@@ -14,6 +14,10 @@ class ActorsController < ApplicationController
     end
   end
 
+  def show
+    @actor = Actor.find(params[:id])
+  end
+
   private
 
   def actor_params

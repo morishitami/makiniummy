@@ -64,6 +64,7 @@
 
       <div>
         <%= link_to "俳優ページの作成・編集", new_user_actor_path(current_user) %>
+        <%= link_to "俳優ページの確認", user_actor_path(current_user.id, @actor) %>
       </div>
 
 
