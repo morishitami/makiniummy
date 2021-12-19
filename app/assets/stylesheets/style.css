@@ -428,6 +428,14 @@ a {
 
 
 /* 俳優詳細ページ */
+.actor-image{
+  width:auto;
+  height:auto;
+  max-width:40%;
+  max-height:400px;
+}
+
+
 .past-program {
   display: flex;
 }

@@ -84,18 +84,4 @@
 ### Association
 
 - belongs_to :user
-- has_one   :nextprogram
 
-## nextprogramsテーブル
-
-| Column   | Type       | Options                        |
-|----------|------------|--------------------------------|
-| schedule | date       | null: false                    |
-| show     | string     | null: false                    |
-| stage    | string     | null: false                    |
-| author   | string     | null: false                    |
-| actor    | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :actor

@@ -18,21 +18,8 @@
     </div>
   </div>
 
-  <div class="next-program">
-    <div class="schedule">
-      <%= "日程：#{@nextprogram.schedule}" %>
-    </div>
-    <div class="show">
-      <%= @nextprogram.show %>
-    </div>
-    <div class="stage">
-      <%= @nextprogram.stage %>
-    </div>
-    <div class="author">
-      <%= @nextprogram.author %>
-    </div>
-    <div class="next-detail">
-      <%= link_to "詳細はこちら！", "https://www.makinium.com/%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89/", target: :_blank, rel: "noopener noreferrer" %>
+  <div class="next-detail">
+    <%= link_to "次回公演はこちら！", "https://www.makinium.com/%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89/", target: :_blank, rel: "noopener noreferrer" %>
   </div>
 
   <div class="past">
@@ -71,6 +58,6 @@
 
 <div class="page-actions">
   <% if user_signed_in? && current_user.id == @actor.user_id %>
-    <%= link_to "編集する", edit_user_actor_path(current_user.id, @actor) %>
+    <%= link_to "編集する", new_user_actor_path(current_user) %>
   <% end %>
 </div>

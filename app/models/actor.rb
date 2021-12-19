@@ -1,5 +1,7 @@
 class Actor < ApplicationRecord
   belongs_to :user
   has_one_attached :image
-  has_one :nextprogram
+
+  validates :image, presence: true
+
 end

@@ -1,15 +1,14 @@
 class ActorsController < ApplicationController
 
   def new
-    @actor_nextprogram = ActorNextprogram.new
+    @actor = Actor.find_or_initialize_by(user_id: current_user.id)
   end
 
   def create
-    @actor_nextprogram = ActorNextprogram.new(actor_params)
-    if @actor_nextprogram.valid?
-      @actor_nextprogram.save
-      @actor = Actor.where(user_id: current_user.id).pluck(:id)
-      redirect_to user_actor_path(current_user.id, @actor)
+    @actor = Actor.new(actor_params)
+    if @actor.valid?
+      @actor.save
+      redirect_to user_actor_path(current_user.id, @actor.id)
     else
       render :new
     end
@@ -17,7 +16,6 @@ class ActorsController < ApplicationController
 
   def show
     @actor = Actor.find(params[:id])
-    @nextprogram = @actor.nextprogram
     @code = current_user.code
     @scode = @code.to_s
     @xlsx = Roo::Excelx.new("test-data.xlsx")
@@ -29,10 +27,20 @@ class ActorsController < ApplicationController
     end
   end
 
+  def update
+    @actor = Actor.find(params[:id])
+    if @actor.update(actor_params)
+      redirect_to user_actor_path(current_user.id, @actor.id)
+    else
+      render :edit
+    end
+  end
+
+
   private
 
   def actor_params
-    params.require(:actor_nextprogram).permit(:comment, :image, :schedule, :show, :stage, :author).merge(user_id: current_user.id)
+    params.require(:actor).permit(:comment, :image).merge(user_id: current_user.id)
   end
 
 end

@@ -84,7 +84,7 @@
             </p>
           <% else %>
             <p class = "page-action">
-              <%= link_to "編集する", edit_user_actor_path(current_user.id, @actor) %>
+              <%= link_to "編集する", new_user_actor_path(current_user) %>
             </p>
             <p class = "page-action">
               <%= link_to "公開ページを確認する", user_actor_path(current_user.id, @actor) %>
