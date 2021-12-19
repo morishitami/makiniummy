@@ -42,7 +42,7 @@
       これまでに出演した作品
       <div class="past-programs">
         <% @last.times do |num|%>
-          <% if @sheet.cell(num+5,'J') > 0 %>
+          <% if @sheet.cell(num+5,'J').to_i > 0 %>
             <div class="past-program">
               <div class="year">
                 <%= @sheet.cell(num+5,'C') %>

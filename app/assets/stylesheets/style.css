@@ -37,7 +37,7 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: #f1f8fe;
+  background-color: #dfe1f4;
   margin-bottom: 48px;
   padding: 20px 0;
 
@@ -58,23 +58,23 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #6271f5;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #6271f5 solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 .nav__btn:hover{
   color: #fff;
-  background: #87CEFA;
+  background: #6271f5;
 }
 
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #6271f5;
   text-decoration: none;
   user-select: none;
 }
@@ -124,9 +124,6 @@ a {
 
 /* メイン */
 
-.greeting{
-  margin-bottom: 20px;
-}
 .greeting__link{
   text-decoration: underline;
 }
@@ -333,17 +330,32 @@ a {
 /* indexページ */
 .menu {
   display: flex;
-  height: 100px;
+  height: 150px;
+  /* background-color: aquamarine; */
+  border-bottom: #000533 1px solid;
+  padding: 5px;
 }
 
 .item {
-  /* background-color: aqua; */
+  background-color: #ebecf8;
   width: 120px;
   text-align: left;
+  padding: 10px;
+  color: #000f99;
+}
+
+.content{
+  padding: 10px;
+  color: #000f99;
 }
 
 .code{
   margin-left: 10px;
+}
+
+.greeting{
+  color: #000f99;
+  margin-bottom: 20px;
 }
 
 /* user詳細ページ */
