@@ -335,6 +335,12 @@ a {
   margin-left: 10px;
 }
 
+.method_btn:hover{
+  color: blue;
+  text-decoration: underline;
+}
+
+
 /* 俳優詳細ページ */
 .release{
   width: 100%;
