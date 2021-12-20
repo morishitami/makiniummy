@@ -324,27 +324,67 @@ a {
 }
 
 /* 俳優詳細ページ */
+.release{
+  width: 100%;
+  text-align: center;
+}
+
+.wrap{
+  width: 1400px;	   /*全体の幅を指定する*/  
+  margin: 0 auto;    /*マージンの指定をする、ブラウザ対策*/
+}
+
+.actor{
+  text-align: center;
+}
+
 .actor-image{
   width:auto;
   height:auto;
   max-width:40%;
   max-height:400px;
+  text-align: center;
+  margin: 0 auto;
 }
 
+.comment{
+  max-width: 30%;
+  margin: 20px auto 40px;
+  text-align: left;
+}
+
+.past{
+  display: inline-block;
+  margin: 80px auto 20px;
+  font-size: 20px;
+}
 
 .past-programs{
-  /* align-items: center; */
-  /* justify-content: center; */
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 15px;
 }
 
 .past-program {
   display: flex;
-  border: solid 1px #c4c9f5;
+  border-left: solid 6px #6271f5;
+  border-bottom: solid 2px #c6caf7;
+  background-color: #ebecf8;
+  margin-bottom: 5px;
+  padding: 1px;
   width:700px;
+  text-align: left;
+}
+
+.year{
+  width:45px;
+  margin-left: 5px;
 }
 
 .past-show{
   width:200px;
+  margin-left: 10px;
 }
 
 .past-detail{
@@ -358,4 +398,27 @@ a {
 .past-detail-per{
   width:48px;
   text-align: right;
+}
+
+.next-detail{
+  font-size: 30px;
+}
+
+.next__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #333014;
+  text-decoration: none;
+  user-select: none;
+  background: #f5e662;
+  border: 1px #f5e662 solid;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
+}
+
+.next__btn:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
 }

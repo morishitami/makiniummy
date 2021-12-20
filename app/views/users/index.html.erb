@@ -137,16 +137,16 @@
         </div>
         <div class="content page-actions">
           <% if current_user.actor == nil %>
-            <div class = actions>
-              <%= link_to "作成する", new_user_actor_path(current_user), class: :form__btn   %>
+            <div class = "actions">
+              <%= link_to "作成する", new_user_actor_path(current_user), class: :form__btn %>
               さっそく作りましょう！
             </div>
           <% else %>
-            <div class = actions>
-              <%= link_to "編集する", new_user_actor_path(current_user), class: :form__btn   %>
+            <div class = "actions">
+              <%= link_to "編集する", new_user_actor_path(current_user), class: :form__btn %>
             </div>
-            <div class = actions>
-              <%= link_to "公開ページを確認する", user_actor_path(current_user.id, @actor), class: :form__btn   %>
+            <div class = "actions">
+              <%= link_to "公開ページを確認する", user_actor_path(current_user.id, @actor), class: :form__btn %>
             </div>
           <% end %>
         <div>

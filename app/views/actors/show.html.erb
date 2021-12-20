@@ -1,78 +1,80 @@
-<div class="inner form__wrapper">
+<div class="inner release">
+  <div class="form__wrapper wrap">
 
-<div class="actor-show">
-  <div class="we-are-makinium">
-    マキニウムの人たち
-  <div class="actor">
-    <h2 class="stage-name">
-      <%= current_user.stage_name %>
-    </h2>
-    <h3 class="times">
-      <% unless @sheet == "none" %>
-        <%= "マキニウム出演回数：#{@sheet.cell(2,'H')}回" %>
-      <% end %>
-    </h3>
-    <div class="actor-image">
-      <%= image_tag @actor.image, class: "actor-img" %>
-    </div>
-    <div class="comment">
-      <%= @actor.comment %>
-    </div>
-  </div>
-
-  <div class="next-detail">
-    <%= link_to "次回公演はこちら！", "https://www.makinium.com/%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89/", target: :_blank, rel: "noopener noreferrer", class: :form__btn %>
-  </div>
-
-  <div class="past">
-    <% if @sheet == "none" %>
-      過去の出演作はまだありません。
-    <% else %>
-      これまでに出演した作品
-      <div class="past-programs">
-        <% @last.times do |num|%>
-          <% if @sheet.cell(num+5,'J').to_i > 0 %>
-            <div class="past-program">
-              <div class="year">
-                <%= @sheet.cell(num+5,'C') %>
-              </div>
-              <div class="past-show">
-                <%= @sheet.cell(num+5,'F') %>
-              </div>
-
-              <div class="past-details">
-                <div class="past-stage">
-                  <%= @sheet.cell(num+5,'G') %>
-                </div>
-                <div class="past-detail">
-                  <p class="past-detail-menu">
-                    俳優支持率（平均）
-                  </p>
-                  <p class="past-detail-per">
-                    <%= "#{@sheet.cell(num+5,'R')}%" %>
-                  </p>
-                </div>
-                <div class="past-detail">
-                  <p class="past-detail-menu">
-                    作品とてもおもしろい率（平均）
-                  </p>
-                  <p class="past-detail-per">
-                    <%= "#{@sheet.cell(num+5,'Q')}%" %>
-                  </p>
-                </div>
-              </div>
-            </div>
+    <div class="actor-show">
+      <div class="we-are-makinium">
+        マキニウムの人たち
+      <div class="actor">
+        <h2 class="stage-name">
+          <%= current_user.stage_name %>
+        </h2>
+        <h3 class="times">
+          <% unless @sheet == "none" %>
+            <%= "マキニウム出演回数：#{@sheet.cell(2,'H')}回" %>
           <% end %>
+        </h3>
+        <div class="actor-image">
+          <%= image_tag @actor.image, class: "actor-img" %>
+        </div>
+        <div class="comment">
+          <%= @actor.comment %>
+        </div>
+      </div>
+
+      <div class="next-detail">
+        <%= link_to "次回公演はこちら！", "https://www.makinium.com/%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89/", target: :_blank, rel: "noopener noreferrer", class: :next__btn %>
+      </div>
+
+      <div class="past">
+        <% if @sheet == "none" %>
+          過去の出演作はまだありません。
+        <% else %>
+          これまでに出演した作品
+          <div class="past-programs">
+            <% @last.times do |num|%>
+              <% if @sheet.cell(num+5,'J').to_i > 0 %>
+                <div class="past-program">
+                  <div class="year">
+                    <%= @sheet.cell(num+5,'C') %>
+                  </div>
+                  <div class="past-show">
+                    <%= @sheet.cell(num+5,'F') %>
+                  </div>
+
+                  <div class="past-details">
+                    <div class="past-stage">
+                      <%= @sheet.cell(num+5,'G') %>
+                    </div>
+                    <div class="past-detail">
+                      <p class="past-detail-menu">
+                        俳優支持率（平均）
+                      </p>
+                      <p class="past-detail-per">
+                        <%= "#{@sheet.cell(num+5,'R')}%" %>
+                      </p>
+                    </div>
+                    <div class="past-detail">
+                      <p class="past-detail-menu">
+                        作品とてもおもしろい率（平均）
+                      </p>
+                      <p class="past-detail-per">
+                        <%= "#{@sheet.cell(num+5,'Q')}%" %>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
         <% end %>
       </div>
-    <% end %>
+    </div>
+
+    <div class="actions">
+      <% if user_signed_in? && current_user.id == @actor.user_id %>
+        <%= link_to "編集する", new_user_actor_path(current_user), class: :form__btn %>
+      <% end %>
+    </div>
+
   </div>
-</div>
-
-<div class="page-actions">
-  <% if user_signed_in? && current_user.id == @actor.user_id %>
-    <%= link_to "編集する", new_user_actor_path(current_user) %>
-  <% end %>
-</div>
-
 </div>
