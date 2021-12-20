@@ -1,56 +1,114 @@
-<main class="main">
+<main class="form__wrapper">
   <div class="inner">
     <% if user_signed_in? %>
 
       <div class="greeting">
         お疲れさまです、
         <% unless current_user.stage_name == "" %>
-          <%= link_to "#{current_user.stage_name}さん", root_path, class: :greeting__link %>
+          <%= "#{current_user.stage_name}さん" %>
         <% else %>
-          <%= link_to "#{current_user.name}さん", root_path, class: :greeting__link%>
+          <%= "#{current_user.name}さん" %>
         <% end %>
         (俳優番号<%= @code %>)
       </div>
 
       <div class ="menu">
         <div class ="item">
-          <%= link_to "成績", user_path(current_user.id) %>
+          成績
         </div>
         <div class="content grade">
           <% if @sheet == "none" %>
             成績はまだありません。
           <% else %>
-            <p class="grade1">
-            <%= "#{@sheet.cell(1,'U')}ランク #{@sheet.cell(1,'V')} #{@sheet.cell(1,'W')}位/#{@sheet.cell(1,'X')}人中" %>
-            </p>
+            <div class="grade1">
+                <% if @sheet.cell(1,'U') == "SP" %>
+                  <div class="emp-top">
+                    <%= "ランク：#{@sheet.cell(1,'U')}" %>
+                  </div>
+                <% elsif @sheet.cell(1,'U') == "S" %>
+                  <div class="emp-middle">
+                    <%= "ランク：#{@sheet.cell(1,'U')}" %>
+                  </div>
+                <% else %>
+                  <div class="emp">
+                    <%= "ランク：#{@sheet.cell(1,'U')}" %>
+                  </div>
+                <% end %>
+
+                <% if @sheet.cell(1,'V') == "レジェンド" || @sheet.cell(1,'V') == "カリスマ" || @sheet.cell(1,'V') == "マスター" %>
+                  <div class="emp-top">
+                    <%= @sheet.cell(1,'V') %>
+                  </div>
+                <% elsif @sheet.cell(1,'V') == "スター" || @sheet.cell(1,'V') == "エース" %>
+                  <div class="emp-middle">
+                    <%= @sheet.cell(1,'V') %>
+                  </div>
+                <% else %>
+                  <div class="emp">
+                    <%= @sheet.cell(1,'V') %>
+                  </div>
+                <% end %>
+
+                <% if @sheet.cell(1,'W').to_i < 5 %>
+                  <div class="emp-top emphasis">
+                    <%= @sheet.cell(1,'W') %>
+                  </div>
+                <% elsif @sheet.cell(1,'W').to_i < 10 %>
+                  <div class="emp-middle emphasis">
+                    <%= @sheet.cell(1,'W') %>
+                  </div>
+                <% else %>
+                  <div class="emp emphasis">
+                    <%= @sheet.cell(1,'W') %>
+                  </div>
+                <% end %>
+
+                <div>
+                  <%= "位/#{@sheet.cell(1,'X')}人中" %>
+                </div>
+            </div>
             <p class="grade2">
             <%= "現在のMP：#{@sheet.cell(2,'X')}" %>
             </p>
             <p class="grade3">
               <%= "MP#{@sheet.cell(2,'W')}になると次のランクに上がります！" %>
             </p>
+            <div class="actions">
+              <%= link_to "詳細をみる", user_path(current_user.id), class: :form__btn   %>
+            </div>
           <% end %>
         </div>
       </div>
 
       <div class ="menu">
         <div class ="item">
-          <%= link_to "メソッド問題", new_user_question_path(current_user) %>
+          メソッド問題
         </div>
 
-        <% unless current_user.question == nil %>
-        <div class ="content answered">
-          <% @questions.each do |answers| %>
-            <% answers %>
-            <% @answers_all = answers %>
+        <div class ="content">
+          <% if current_user.question == nil %>
+            動画を見て問題を解きましょう！
+          <% else %>
+            <p class="answered">
+            <% @questions.each do |answers| %>
+              <% answers %>
+              <% @answers_all = answers %>
+            <% end %>
+            <% @answers = @answers_all.count(true) %>
+            <%= "#{@answers}/33問 回答しました！" %>
+            </p>
+            <p class="answered-per">
+              <% if ((@answers.to_f / 33) * 100).round(1) == 100 %>
+                回答率<span class="perfect"><%="#{((@answers.to_f / 33) * 100).round(1)}%" %></span>
+              <% else %>
+                <%= "回答率#{((@answers.to_f / 33) * 100).round(1)}%" %>
+              <% end %>
+            </p>
           <% end %>
-          <% @answers = @answers_all.count(true) %>
-          <%= "#{@answers}/33問 回答しました！" %>
-          <p class="answered%">
-          <%= "回答率#{((@answers.to_f / 33) * 100).round(1)}%" %>
-          </p>
+          <div class="actions">
+            <%= link_to "メソッド一覧を見る", new_user_question_path(current_user), class: :form__btn   %>
+          </div>
         </div>
-        <% end %>
       </div>
 
       <div class ="menu">
@@ -79,25 +137,26 @@
         </div>
         <div class="content page-actions">
           <% if current_user.actor == nil %>
-            <p class = "page-action">
-              <%= link_to "作成する", new_user_actor_path(current_user) %>
-            </p>
+            <div class = actions>
+              <%= link_to "作成する", new_user_actor_path(current_user), class: :form__btn   %>
+              さっそく作りましょう！
+            </div>
           <% else %>
-            <p class = "page-action">
-              <%= link_to "編集する", new_user_actor_path(current_user) %>
-            </p>
-            <p class = "page-action">
-              <%= link_to "公開ページを確認する", user_actor_path(current_user.id, @actor) %>
-            </p>
+            <div class = actions>
+              <%= link_to "編集する", new_user_actor_path(current_user), class: :form__btn   %>
+            </div>
+            <div class = actions>
+              <%= link_to "公開ページを確認する", user_actor_path(current_user.id, @actor), class: :form__btn   %>
+            </div>
           <% end %>
         <div>
       </div>
 
-
+    <% else %>
+      <div class="form__wrapper">
+        右上から「ログイン」または「新規登録」をしてください
+      </div>
     <% end %>
-    <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
-    </div>
   </div>
   
 </main>

@@ -1,3 +1,5 @@
+<div class="inner form__wrapper">
+
 <div class="actor-show">
   <div class="we-are-makinium">
     マキニウムの人たち
@@ -19,7 +21,7 @@
   </div>
 
   <div class="next-detail">
-    <%= link_to "次回公演はこちら！", "https://www.makinium.com/%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89/", target: :_blank, rel: "noopener noreferrer" %>
+    <%= link_to "次回公演はこちら！", "https://www.makinium.com/%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89/", target: :_blank, rel: "noopener noreferrer", class: :form__btn %>
   </div>
 
   <div class="past">
@@ -37,16 +39,27 @@
               <div class="past-show">
                 <%= @sheet.cell(num+5,'F') %>
               </div>
+
               <div class="past-details">
-                <p class="past-detail">
+                <div class="past-stage">
                   <%= @sheet.cell(num+5,'G') %>
-                </p>
-                <p class="past-detail">
-                  <%= "俳優支持率（平均）#{@sheet.cell(num+5,'G')}%" %>
-                </p>
-                <p class="past-detail">
-                  <%= "ステージ別最高俳優支持率 #{@sheet.cell(num+5,'G')}%" %>
-                </p>
+                </div>
+                <div class="past-detail">
+                  <p class="past-detail-menu">
+                    俳優支持率（平均）
+                  </p>
+                  <p class="past-detail-per">
+                    <%= "#{@sheet.cell(num+5,'R')}%" %>
+                  </p>
+                </div>
+                <div class="past-detail">
+                  <p class="past-detail-menu">
+                    作品とてもおもしろい率（平均）
+                  </p>
+                  <p class="past-detail-per">
+                    <%= "#{@sheet.cell(num+5,'Q')}%" %>
+                  </p>
+                </div>
               </div>
             </div>
           <% end %>
@@ -60,4 +73,6 @@
   <% if user_signed_in? && current_user.id == @actor.user_id %>
     <%= link_to "編集する", new_user_actor_path(current_user) %>
   <% end %>
+</div>
+
 </div>
