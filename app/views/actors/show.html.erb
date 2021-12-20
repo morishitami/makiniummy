@@ -20,9 +20,11 @@
         <div class="actor-image">
           <%= image_tag @actor.image, class: "actor-img" %>
         </div>
-        <div class="comment">
-          <%= safe_join(@actor.comment.split("\n"),tag(:br)) %>
-        </div>
+        <% unless @actor.comment == "" %>
+          <div class="comment">
+            <%= safe_join(@actor.comment.split("\n"),tag(:br)) %>
+          </div>
+        <% end %>
       </div>
 
       <div class="next-detail">
