@@ -48,7 +48,17 @@
       <%= "現在のMP：#{@sheet.cell(2,'X')}" %>
       </p>
       <p class="grade3">
-        <%= "MP#{@sheet.cell(2,'W')}になると次のランクに上がります！" %>
+        <% if @sheet.cell(1,'V') == "デビュー" %>
+          <% @next_grade = "「計2作品に出演＋スタッフ経験を積む」 と" %>
+        <% elsif @sheet.cell(1,'V') == "ルーキー" %>
+          <% @next_grade = "「計2.5作品に出演＋メソッド問題提出率100%になる」 と" %>
+        <% else %>
+          <% @next_grade = "MP#{@sheet.cell(2,'W')}になる と" %>
+        <% end %>
+          <%= "#{@next_grade}次のランクに上がります！" %>
+          <% @next_gradep = @sheet.cell(2,'W').to_i %>
+          <% @now_gradep = @sheet.cell(2,'X').to_i %>
+          あと<strong><%= @next_gradep - @now_gradep %></strong>ポイント！
       </p>
     </div>
   </div>
