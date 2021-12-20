@@ -1,27 +1,58 @@
 <main class="form__wrapper">
   <div class="statistics">
-    <div>
-      会員番号 <%= @code %>
-    </div>
-    <div>
-      <% unless @stage_name == "" %>
-        <%= @stage_name %>さん
+    <h3>
+      <% unless current_user.stage_name == "" %>
+        <%= "#{current_user.stage_name}さん" %>
       <% else %>
-       <%= @name %>さん
+        <%= "#{current_user.name}さん" %>
       <% end %>
-    </div>
+      (俳優番号<%= @code %>)
+    </h3>
     <div>
-      <p>
-        <%= "#{@sheet.cell(1,'U')}ランク #{@sheet.cell(1,'V')} #{@sheet.cell(1,'W')}位/#{@sheet.cell(1,'X')}人中" %>
+      <div class="grade1">
+          <div>
+            <% if @sheet.cell(1,'U') == "SP" %>
+              <span class="emp-top"><%= "ランク：#{@sheet.cell(1,'U')}" %></span>
+            <% elsif @sheet.cell(1,'U') == "S" %>
+              <span class="emp-middle"><%= "ランク：#{@sheet.cell(1,'U')}" %></span>
+            <% else %>
+              <span class="emp"><%= "ランク：#{@sheet.cell(1,'U')}" %></span>
+            <% end %>
+          </div>
+
+          <div>
+            <% if @sheet.cell(1,'V') == "レジェンド" || @sheet.cell(1,'V') == "カリスマ" || @sheet.cell(1,'V') == "マスター" %>
+              <span class="emp-top"><%= @sheet.cell(1,'V') %></span>
+            <% elsif @sheet.cell(1,'V') == "スター" || @sheet.cell(1,'V') == "エース" %></span>
+              <span class="emp-middle"><%= @sheet.cell(1,'V') %></span>
+            <% else %>
+              <span class="emp"><%= @sheet.cell(1,'V') %>
+            <% end %>
+          </div>
+
+          <div>
+            <% if @sheet.cell(1,'W').to_i < 5 %>
+              <span class="emp-top emphasis"><%= @sheet.cell(1,'W') %></span>
+            <% elsif @sheet.cell(1,'W').to_i < 10 %>
+              <span class="emp-middle emphasis"><%= @sheet.cell(1,'W') %></span>
+            <% else %>
+              <span class="emp emphasis"><%= @sheet.cell(1,'W') %></span>
+            <% end %>
+          </div>
+
+          <div>
+            <%= "位/#{@sheet.cell(1,'X')}人中" %>
+          </div>
+      </div>
+      <p class="grade2">
+      <%= "現在のMP：#{@sheet.cell(2,'X')}" %>
       </p>
-      <p>
-        <%= "現在のMP：#{@sheet.cell(2,'X')}" %>
-      </p>
-      <p>
+      <p class="grade3">
         <%= "MP#{@sheet.cell(2,'W')}になると次のランクに上がります！" %>
       </p>
     </div>
   </div>
+
   <div class="detail">
     <table border="1">
         <tr class="title1 fixed">

@@ -85,6 +85,9 @@ a {
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
+  width: 1400px;
+  margin: 0 auto;
+
 }
 
 .form__code {
@@ -256,6 +259,11 @@ a {
 }
 
 /* user詳細ページ */
+
+.grade2,.grade3{
+  margin-top: 20px;
+}
+
 .detail {
   font-size: 12px;
   font-weight: bold;
@@ -330,15 +338,6 @@ a {
 /* 俳優詳細ページ */
 .release{
   width: 100%;
-  text-align: center;
-}
-
-.wrap{
-  width: 1400px;
-  margin: 0 auto;
-}
-
-.actor{
   text-align: center;
 }
 

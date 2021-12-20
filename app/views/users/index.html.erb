@@ -55,10 +55,10 @@
                   <%= "位/#{@sheet.cell(1,'X')}人中" %>
                 </div>
             </div>
-            <p class="grade2">
+            <p>
             <%= "現在のMP：#{@sheet.cell(2,'X')}" %>
             </p>
-            <p class="grade3">
+            <p>
               <%= "MP#{@sheet.cell(2,'W')}になると次のランクに上がります！" %>
             </p>
             <div class="actions">
@@ -141,9 +141,7 @@
       </div>
 
     <% else %>
-      <div class="form__wrapper">
         右上から「ログイン」または「新規登録」をしてください
-      </div>
     <% end %>
   </div>
   
