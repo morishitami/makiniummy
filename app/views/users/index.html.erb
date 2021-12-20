@@ -21,47 +21,35 @@
             成績はまだありません。
           <% else %>
             <div class="grade1">
-                <% if @sheet.cell(1,'U') == "SP" %>
-                  <div class="emp-top">
-                    <%= "ランク：#{@sheet.cell(1,'U')}" %>
-                  </div>
-                <% elsif @sheet.cell(1,'U') == "S" %>
-                  <div class="emp-middle">
-                    <%= "ランク：#{@sheet.cell(1,'U')}" %>
-                  </div>
-                <% else %>
-                  <div class="emp">
-                    <%= "ランク：#{@sheet.cell(1,'U')}" %>
-                  </div>
-                <% end %>
+                <div>
+                  <% if @sheet.cell(1,'U') == "SP" %>
+                    <span class="emp-top"><%= "ランク：#{@sheet.cell(1,'U')}" %></span>
+                  <% elsif @sheet.cell(1,'U') == "S" %>
+                    <span class="emp-middle"><%= "ランク：#{@sheet.cell(1,'U')}" %></span>
+                  <% else %>
+                    <span class="emp"><%= "ランク：#{@sheet.cell(1,'U')}" %></span>
+                  <% end %>
+                </div>
 
-                <% if @sheet.cell(1,'V') == "レジェンド" || @sheet.cell(1,'V') == "カリスマ" || @sheet.cell(1,'V') == "マスター" %>
-                  <div class="emp-top">
-                    <%= @sheet.cell(1,'V') %>
-                  </div>
-                <% elsif @sheet.cell(1,'V') == "スター" || @sheet.cell(1,'V') == "エース" %>
-                  <div class="emp-middle">
-                    <%= @sheet.cell(1,'V') %>
-                  </div>
-                <% else %>
-                  <div class="emp">
-                    <%= @sheet.cell(1,'V') %>
-                  </div>
-                <% end %>
+                <div>
+                  <% if @sheet.cell(1,'V') == "レジェンド" || @sheet.cell(1,'V') == "カリスマ" || @sheet.cell(1,'V') == "マスター" %>
+                    <span class="emp-top"><%= @sheet.cell(1,'V') %></span>
+                  <% elsif @sheet.cell(1,'V') == "スター" || @sheet.cell(1,'V') == "エース" %></span>
+                    <span class="emp-middle"><%= @sheet.cell(1,'V') %></span>
+                  <% else %>
+                    <span class="emp"><%= @sheet.cell(1,'V') %>
+                  <% end %>
+                </div>
 
-                <% if @sheet.cell(1,'W').to_i < 5 %>
-                  <div class="emp-top emphasis">
-                    <%= @sheet.cell(1,'W') %>
-                  </div>
-                <% elsif @sheet.cell(1,'W').to_i < 10 %>
-                  <div class="emp-middle emphasis">
-                    <%= @sheet.cell(1,'W') %>
-                  </div>
-                <% else %>
-                  <div class="emp emphasis">
-                    <%= @sheet.cell(1,'W') %>
-                  </div>
-                <% end %>
+                <div>
+                  <% if @sheet.cell(1,'W').to_i < 5 %>
+                    <span class="emp-top emphasis"><%= @sheet.cell(1,'W') %></span>
+                  <% elsif @sheet.cell(1,'W').to_i < 10 %>
+                    <span class="emp-middle emphasis"><%= @sheet.cell(1,'W') %></span>
+                  <% else %>
+                    <span class="emp emphasis"><%= @sheet.cell(1,'W') %></span>
+                  <% end %>
+                </div>
 
                 <div>
                   <%= "位/#{@sheet.cell(1,'X')}人中" %>

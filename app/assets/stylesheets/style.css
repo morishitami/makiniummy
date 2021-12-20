@@ -242,6 +242,10 @@ a {
   margin-right: 45px;
 }
 
+.emp-low{
+  margin-right: 45px;
+}
+
 .emphasis{
   font-size: 23px;
   margin-right: 10px;
@@ -330,8 +334,8 @@ a {
 }
 
 .wrap{
-  width: 1400px;	   /*全体の幅を指定する*/  
-  margin: 0 auto;    /*マージンの指定をする、ブラウザ対策*/
+  width: 1400px;
+  margin: 0 auto;
 }
 
 .actor{
@@ -342,21 +346,37 @@ a {
   width:auto;
   height:auto;
   max-width:40%;
-  max-height:400px;
+  max-height:40%;
   text-align: center;
   margin: 0 auto;
 }
 
 .comment{
-  max-width: 30%;
+  position: relative;
+  max-width: 38%;
   margin: 20px auto 40px;
   text-align: left;
+  background: #e1f5c4;
+  box-shadow: 0px 0px 0px 5px #e1f5c4;;
+  border: dashed 2px white;
+  padding: 10px 20px;
+  color: #454545;
+}
+
+.comment:after {
+  position: absolute;
+  content: '';
+  left: -7px;
+  top: -7px;
+  border-width: 0 0 15px 15px;
+  border-style: solid;
+  border-color: #fff #fff #baf562;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 .past{
   display: inline-block;
   margin: 80px auto 20px;
-  font-size: 20px;
 }
 
 .past-programs{
@@ -364,6 +384,7 @@ a {
   margin: 0 auto;
   text-align: center;
   font-size: 15px;
+  margin-top: 15px;
 }
 
 .past-program {
@@ -387,12 +408,16 @@ a {
   margin-left: 10px;
 }
 
+.past-stage{
+  font-size: 18px;
+}
+
 .past-detail{
   display: flex;
 }
 
 .past-detail-menu{
-  width:250px;
+  width:280px;
 }
 
 .past-detail-per{
@@ -421,4 +446,26 @@ a {
 .next__btn:hover {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
+}
+
+.moderate{
+  color: #656565;
+}
+
+
+/* 俳優詳細ページ */
+
+.image-form{
+  margin: 20px 0;
+  height: 100px;
+}
+
+.comment-form{
+  margin: 20px 0;
+  height: 250px;
+}
+
+.comment-input{
+  width: 400px;
+  height: 200px;
 }

@@ -5,9 +5,13 @@
       <div class="we-are-makinium">
         マキニウムの人たち
       <div class="actor">
-        <h2 class="stage-name">
-          <%= current_user.stage_name %>
-        </h2>
+        <h1 class="stage-name">
+          <% unless current_user.stage_name == "" %>
+            <%= "#{current_user.stage_name}" %>
+          <% else %>
+            <%= "#{current_user.name}" %>
+          <% end %>
+        </h1>
         <h3 class="times">
           <% unless @sheet == "none" %>
             <%= "マキニウム出演回数：#{@sheet.cell(2,'H')}回" %>
@@ -17,7 +21,7 @@
           <%= image_tag @actor.image, class: "actor-img" %>
         </div>
         <div class="comment">
-          <%= @actor.comment %>
+          <%= safe_join(@actor.comment.split("\n"),tag(:br)) %>
         </div>
       </div>
 
@@ -29,7 +33,7 @@
         <% if @sheet == "none" %>
           過去の出演作はまだありません。
         <% else %>
-          これまでに出演した作品
+          <h3>これまでに出演した作品</h3>
           <div class="past-programs">
             <% @last.times do |num|%>
               <% if @sheet.cell(num+5,'J').to_i > 0 %>
@@ -47,18 +51,34 @@
                     </div>
                     <div class="past-detail">
                       <p class="past-detail-menu">
-                        俳優支持率（平均）
+                        <span class="moderate">俳優支持率（平均）</span>
                       </p>
                       <p class="past-detail-per">
-                        <%= "#{@sheet.cell(num+5,'R')}%" %>
+                        <% if @sheet.cell(num+5,'R').to_i >= 80.0 %>
+                          <span class="emp-top"><%= "#{sprintf("%.1f",@sheet.cell(num+5,'R').to_f)}%" %></span>
+                        <% elsif @sheet.cell(num+5,'R').to_i >= 50.0 %>
+                          <span class="emp-middle"><%= "#{sprintf("%.1f",@sheet.cell(num+5,'R').to_f)}%" %></span>
+                        <% elsif @sheet.cell(num+5,'R').to_i >= 30.0 %>
+                          <span class="emp"><%= "#{sprintf("%.1f",@sheet.cell(num+5,'R').to_f)}%" %></span>
+                        <% else %>
+                          <span class="emp-low"><%= "#{sprintf("%.1f",@sheet.cell(num+5,'R').to_f)}%" %></span>
+                        <% end %>
                       </p>
                     </div>
                     <div class="past-detail">
                       <p class="past-detail-menu">
-                        作品とてもおもしろい率（平均）
+                        <span class="moderate">作品とてもおもしろい率（平均）</span>
                       </p>
                       <p class="past-detail-per">
-                        <%= "#{@sheet.cell(num+5,'Q')}%" %>
+                        <% if @sheet.cell(num+5,'Q').to_i >= 80.0 %>
+                          <span class="emp-top"><%= "#{sprintf("%.1f",@sheet.cell(num+5,'Q').to_f)}%" %></span>
+                        <% elsif @sheet.cell(num+5,'Q').to_i >= 50.0 %>
+                          <span class="emp-middle"><%= "#{sprintf("%.1f",@sheet.cell(num+5,'Q').to_f)}%" %></span>
+                        <% elsif @sheet.cell(num+5,'Q').to_i >= 30.0 %>
+                          <span class="emp"><%= "#{sprintf("%.1f",@sheet.cell(num+5,'Q').to_f)}%" %></span>
+                        <% else %>
+                          <span class="emp-low"><%= "#{sprintf("%.1f",@sheet.cell(num+5,'Q').to_f)}%" %></span>
+                        <% end %>
                       </p>
                     </div>
                   </div>

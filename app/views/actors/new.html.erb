@@ -1,4 +1,4 @@
-<div class="form__wrapper inner">
+<div class="form__wrapper inner ">
   <%= form_with model: [current_user, @actor], local: true do |f| %>
 
     <%= render 'shared/error_messages',{ model: f.object} %>
@@ -7,24 +7,25 @@
       俳優情報
       </h2>
       <div class="form">
-        <div class="form-content">
+        <div class="image-form">
           <div class="form-lavel">
-            画像（必須）
+            <h4>画像（必須）</h4>
           </div>
           <%= f.file_field :image, class:"actor-image" %>
         </div>
 
-        <div class="form-content">
+        <div class="comment-form">
           <div class="form-lavel">
-            コメント
+            <h4>コメント</h4>
           </div>
-          <%= f.text_area :comment, class:"comment" %>
+          <%= f.text_area :comment, class:"comment-input" %>
         </div>
       </div> 
-    </div>
 
-    <div class="actions">
-      <%= f.submit "作成する", class: :form__btn  %>
+      <div class="actions">
+        <%= f.submit "作成する", class: :form__btn  %>
+      </div>
+
     </div>
 
   <% end %>
