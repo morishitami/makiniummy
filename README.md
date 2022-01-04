@@ -39,7 +39,7 @@ Basic認証
 [![Image from Gyazo](https://i.gyazo.com/a354fca44e963aec956b3f33c1097d08.gif)](https://gyazo.com/a354fca44e963aec956b3f33c1097d08)
 
 ### 実装予定の機能
-・スタッフ実績の閲覧（劇団とデータの取り扱いについて協議中）  
+・スタッフ実績の閲覧 
 ・俳優ページの公開化
 
 ### 開発環境
