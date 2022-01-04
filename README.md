@@ -30,7 +30,7 @@ Basic認証
 [![Image from Gyazo](https://i.gyazo.com/bc90453439daf83318e09cc18f512fb2.png)](https://gyazo.com/bc90453439daf83318e09cc18f512fb2)
 
 ### 俳優成績一覧
-[![Image from Gyazo](https://i.gyazo.com/56e804c8c71820a94fc4300289a15ccd.gif)](https://gyazo.com/56e804c8c71820a94fc4300289a15ccd)
+![56e804c8c71820a94fc4300289a15ccd](https://user-images.githubusercontent.com/93413391/148045550-d34aba90-3e1f-4746-a9eb-6bdf0420f699.gif)
 
 ### 演技理論問題回答状況
 [![Image from Gyazo](https://i.gyazo.com/0f316de35ed0d52e1b711cc5a7ff71d8.jpg)](https://gyazo.com/0f316de35ed0d52e1b711cc5a7ff71d8)
