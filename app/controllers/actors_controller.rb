@@ -1,4 +1,5 @@
 class ActorsController < ApplicationController
+  before_action :move_to_root, only: [:show, :create, :update]
 
   def new
     @actor = Actor.find_or_initialize_by(user_id: current_user.id)
@@ -41,6 +42,13 @@ class ActorsController < ApplicationController
 
   def actor_params
     params.require(:actor).permit(:comment, :image).merge(user_id: current_user.id)
+  end
+
+  def move_to_root
+    @actor = Actor.find(params[:id])
+    unless current_user.id == @actor.user_id
+      redirect_to root_path
+    end
   end
 
 end
